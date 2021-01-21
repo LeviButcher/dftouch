@@ -1,0 +1,49 @@
+name:                dtouch
+version:             0.1.0.0
+github:              "levibutcher/dtouch"
+license:             MIT
+author:              "Levi Butcher"
+maintainer:          "levibutcher355@gmail.com"
+copyright:           "2021 Levi Butcher"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/levibutcher/dtouch#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- time
+
+library:
+  source-dirs: src
+
+executables:
+  dtouch-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - dtouch
+
+tests:
+  dtouch-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - dtouch
