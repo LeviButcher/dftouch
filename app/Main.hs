@@ -4,16 +4,18 @@ import Data.List
 -- Get working with relative paths
 -- Look into publishing
 
-import Lib (getCurrentDate)
+import Lib (getCurrentDateString, replace)
 import System.Environment
+
+replaceIfDashWithUnderscore = replace (== '-') '_'
 
 -- Assume first arg is just path/filename
 main :: IO ()
 main = do
   args <- getArgs
   let filePath = head args
-  date@(year, day, month) <- getCurrentDate
-  let dateString = concat $ intersperse "_" [show month, show day, show year]
+  dateString <- replaceIfDashWithUnderscore <$> getCurrentDateString
+  print dateString
   let newFile = dateString ++ "_" ++ filePath
   writeFile newFile ""
 
