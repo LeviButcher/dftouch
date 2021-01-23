@@ -1,24 +1,29 @@
 module Main where
 
 import Data.List
-import Lib (getCurrentDateString, replace, split)
+import Data.Maybe (listToMaybe)
+import Lib (getCurrentDateString, replace, split, toEither)
 import System.Environment
+import System.Exit
 
 replaceIfDashWithUnderscore = replace (== '-') '_'
 
 main :: IO ()
 main = do
   args <- getArgs
-  let filePath = head args
+  let userArgs = listToMaybe args
+  let either = toEither "dftouch: missing file input" userArgs
+  filePath <- case either of
+    Left error -> print error >> exitSuccess
+    Right success -> return success
   dateString <- replaceIfDashWithUnderscore <$> getCurrentDateString
-  print dateString
   let splitPath = split '/' filePath
   let (rest, fileName) = splitAt (length splitPath - 1) splitPath
   let dateFileName = ((dateString ++ "_") ++) <$> fileName
   let dateFullPath = intercalate "/" $ union rest dateFileName
-  writeFile dateFullPath ""
+  print dateFullPath
+
+-- writeFile dateFullPath ""
 
 -- Problems
--- 1. Day when less then 10 doesn't have 0 at start
--- 1. No handling of paths yet
 -- 1. Inefficient operations but eh
