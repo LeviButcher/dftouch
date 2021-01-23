@@ -3,6 +3,7 @@ module Lib
     getCurrentDateString,
     showTriple,
     replace,
+    split,
   )
 where
 
@@ -26,3 +27,14 @@ showTriple (a, b, c) = show a ++ show b ++ show c
 
 replace :: (a -> Bool) -> a -> [a] -> [a]
 replace f r = foldr (\curr acc -> if f curr then r : acc else curr : acc) []
+
+-- // check if element is a
+-- if a, then make empty list
+-- else add a to most recent list
+split :: Eq a => a -> [a] -> [[a]]
+split a =
+  foldr
+    ( \curr acc -> case acc of
+        (x : xs) -> if curr == a then [] : acc else (curr : x) : xs
+    )
+    [[]]

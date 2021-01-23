@@ -1,6 +1,6 @@
-name:                dtouch
+name:                dftouch
 version:             0.1.0.0
-github:              "levibutcher/dtouch"
+github:              "levibutcher/dftouch"
 license:             MIT
 author:              "Levi Butcher"
 maintainer:          "levibutcher355@gmail.com"
@@ -17,7 +17,7 @@ extra-source-files:
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/levibutcher/dtouch#readme>
+description:         Please see the README on GitHub at <https://github.com/levibutcher/dftouch#readme>
 
 dependencies:
 - base >= 4.7 && < 5
@@ -35,7 +35,7 @@ executables:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - dtouch
+    - dftouch
 
 tests:
   dtouch-test:
@@ -46,4 +46,4 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - dtouch
+    - dftouch
