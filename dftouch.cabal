@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 16333323e6c94fcfa787a4a01b709ef7de0d66277ea2d02cfae193dcf7eb9887
+-- hash: c14f0efdd6ed8ed140206e797886aa3b9b9a110185a608c3ad788418c3ca9f07
 
 name:           dftouch
 version:        0.1.0.0
@@ -37,7 +37,7 @@ library
     , time
   default-language: Haskell2010
 
-executable dtouch-exe
+executable dftouch
   main-is: Main.hs
   other-modules:
       Paths_dftouch
@@ -50,7 +50,7 @@ executable dtouch-exe
     , time
   default-language: Haskell2010
 
-test-suite dtouch-test
+test-suite dftouch-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:

@@ -27,7 +27,7 @@ library:
   source-dirs: src
 
 executables:
-  dtouch-exe:
+  dftouch:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
@@ -38,7 +38,7 @@ executables:
     - dftouch
 
 tests:
-  dtouch-test:
+  dftouch-test:
     main:                Spec.hs
     source-dirs:         test
     ghc-options:

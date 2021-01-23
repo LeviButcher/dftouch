@@ -21,9 +21,7 @@ main = do
   let (rest, fileName) = splitAt (length splitPath - 1) splitPath
   let dateFileName = ((dateString ++ "_") ++) <$> fileName
   let dateFullPath = intercalate "/" $ union rest dateFileName
-  print dateFullPath
-
--- writeFile dateFullPath ""
+  writeFile dateFullPath ""
 
 -- Problems
 -- 1. Inefficient operations but eh
