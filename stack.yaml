@@ -65,3 +65,7 @@ packages:
 #
 # Allow a newer minor version of GHC than the snapshot specifies
 # compiler-check: newer-minor
+templates:
+  params:
+    category: Tools
+    synopsis: Date formatted touch utility - just adds the current date to the file name 

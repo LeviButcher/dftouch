@@ -4,17 +4,19 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: c14f0efdd6ed8ed140206e797886aa3b9b9a110185a608c3ad788418c3ca9f07
+-- hash: 1c13ea7cf1bebf300349141174eba0f635dfbd81171e5de2295694350280797a
 
 name:           dftouch
-version:        0.1.0.0
+version:        1.0.0
+synopsis:       Date formatted touch utility - just adds the current date to the file name
 description:    Please see the README on GitHub at <https://github.com/levibutcher/dftouch#readme>
+category:       Tools
 homepage:       https://github.com/levibutcher/dftouch#readme
 bug-reports:    https://github.com/levibutcher/dftouch/issues
 author:         Levi Butcher
 maintainer:     levibutcher355@gmail.com
 copyright:      2021 Levi Butcher
-license:        MIT
+license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
 extra-source-files:

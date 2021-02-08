@@ -4,6 +4,8 @@ module Lib
     replace,
     split,
     toEither,
+    getFormattedDate,
+    toTwoDigitString,
   )
 where
 
@@ -19,6 +21,12 @@ type Day = Int
 
 getCurrentDate :: IO (Year, Month, Day)
 getCurrentDate = getCurrentTime <&> (toGregorian . utctDay)
+
+getFormattedDate :: IO (Year, Month, Day)
+getFormattedDate = do
+  (y, m, d) <- getCurrentDate
+  let fY = read . drop 2 . show $ y
+  return (fY, m, d)
 
 getCurrentDateString :: IO (String)
 getCurrentDateString = getCurrentTime <&> (show . utctDay)
@@ -37,3 +45,8 @@ split a =
 toEither :: String -> Maybe a -> Either String a
 toEither _ (Just a) = Right a
 toEither a Nothing = Left a
+
+toTwoDigitString :: Int -> String
+toTwoDigitString x
+  | x > 10 = show x
+  | otherwise = '0' : show x
