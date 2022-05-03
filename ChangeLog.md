@@ -1,3 +1,3 @@
-# Changelog for dtouch
+# Changelog for dftouch
 
 ## Unreleased changes
