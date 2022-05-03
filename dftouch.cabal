@@ -1,21 +1,17 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.33.0.
+-- This file has been generated from package.yaml by hpack version 0.34.4.
 --
 -- see: https://github.com/sol/hpack
---
--- hash: 1c13ea7cf1bebf300349141174eba0f635dfbd81171e5de2295694350280797a
 
 name:           dftouch
-version:        1.0.0
-synopsis:       Date formatted touch utility - just adds the current date to the file name
+version:        0.1.0.0
 description:    Please see the README on GitHub at <https://github.com/levibutcher/dftouch#readme>
-category:       Tools
 homepage:       https://github.com/levibutcher/dftouch#readme
 bug-reports:    https://github.com/levibutcher/dftouch/issues
 author:         Levi Butcher
 maintainer:     levibutcher355@gmail.com
-copyright:      2021 Levi Butcher
+copyright:      2022 Levi Butcher
 license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
@@ -36,10 +32,9 @@ library
       src
   build-depends:
       base >=4.7 && <5
-    , time
   default-language: Haskell2010
 
-executable dftouch
+executable dftouch-exe
   main-is: Main.hs
   other-modules:
       Paths_dftouch
@@ -49,6 +44,8 @@ executable dftouch
   build-depends:
       base >=4.7 && <5
     , dftouch
+    , filepath
+    , optparse-applicative
     , time
   default-language: Haskell2010
 
@@ -63,5 +60,4 @@ test-suite dftouch-test
   build-depends:
       base >=4.7 && <5
     , dftouch
-    , time
   default-language: Haskell2010

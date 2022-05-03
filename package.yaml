@@ -1,49 +1,51 @@
-name:                dftouch
-version:             1.0.0
-github:              "levibutcher/dftouch"
-license:             BSD3
-author:              "Levi Butcher"
-maintainer:          "levibutcher355@gmail.com"
-copyright:           "2021 Levi Butcher"
+name: dftouch
+version: 0.1.0.0
+github: "levibutcher/dftouch"
+license: BSD3
+author: "Levi Butcher"
+maintainer: "levibutcher355@gmail.com"
+copyright: "2022 Levi Butcher"
 
 extra-source-files:
-- README.md
-- ChangeLog.md
+  - README.md
+  - ChangeLog.md
 
 # Metadata used when publishing your package
-category: Tools
-synopsis: Date formatted touch utility - just adds the current date to the file name 
+# synopsis:            Short description of your package
+# category:            Web
 
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/levibutcher/dftouch#readme>
+description: Please see the README on GitHub at <https://github.com/levibutcher/dftouch#readme>
 
 dependencies:
-- base >= 4.7 && < 5
-- time
+  - base >= 4.7 && < 5
 
 library:
   source-dirs: src
 
 executables:
-  dftouch:
-    main:                Main.hs
-    source-dirs:         app
+  dftouch-exe:
+    main: Main.hs
+    source-dirs: app
     ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
     dependencies:
-    - dftouch
+      - dftouch
+      - optparse-applicative
+      - time
+      - filepath
 
 tests:
   dftouch-test:
-    main:                Spec.hs
-    source-dirs:         test
+    main: Spec.hs
+    source-dirs: test
     ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
     dependencies:
-    - dftouch
+      - dftouch
